@@ -1,0 +1,10 @@
+[debug] [2026-06-30T20:54:30.296Z] ----------------------------------------------------------------------
+[debug] [2026-06-30T20:54:30.297Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\elgery\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login:ci
+[debug] [2026-06-30T20:54:30.298Z] CLI Version:   15.22.3
+[debug] [2026-06-30T20:54:30.298Z] Platform:      win32
+[debug] [2026-06-30T20:54:30.298Z] Node Version:  v24.17.0
+[debug] [2026-06-30T20:54:30.298Z] Detected Agent: unknown
+[debug] [2026-06-30T20:54:30.298Z] Time:          Tue Jun 30 2026 22:54:30 GMT+0200 (hora de verano de Europa central)
+[debug] [2026-06-30T20:54:30.298Z] ----------------------------------------------------------------------
+[debug] 
+[warn] !  Authenticating with a `login:ci` token is deprecated and will be removed in a future major version of `firebase-tools`. Instead, use a service account key with `GOOGLE_APPLICATION_CREDENTIALS`: https://cloud.google.com/docs/authentication/getting-started 
