@@ -15,6 +15,20 @@ const categoryMeta: Record<ProjectCategory, { icon: LucideIcon; className: strin
 };
 
 function CardLinks({ project }: { project: Project }) {
+  if (project.accessHref && project.accessLabel) {
+    return (
+      <div className="mt-5">
+        <a
+          href={project.accessHref}
+          className="inline-flex h-10 items-center gap-1.5 rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          {project.accessLabel}
+          <ArrowUpRight className="size-4" aria-hidden />
+        </a>
+      </div>
+    );
+  }
+
   if (project.repoOrLink) {
     return (
       <div className="mt-5 flex flex-wrap items-center gap-2">

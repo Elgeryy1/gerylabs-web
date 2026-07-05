@@ -10,6 +10,8 @@ import {
 
 const META: Record<ProjectStatus, { dot: string; detail: string }> = {
   "En desarrollo": { dot: "bg-amber-400", detail: "Funcional y en evolución activa." },
+  "En pausa": { dot: "bg-amber-400", detail: "Proyecto funcional, pausado actualmente." },
+  "Beta abierta": { dot: "bg-emerald-400", detail: "Acceso disponible bajo contacto." },
   Activo: { dot: "bg-emerald-400", detail: "En uso y mantenido." },
   Completado: { dot: "bg-sky-400", detail: "Entregado y funcional." },
   Prototipo: { dot: "bg-violet-400", detail: "Prueba de concepto funcional." },

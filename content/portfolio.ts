@@ -9,7 +9,13 @@ export type ProjectCategory =
   | "Infra/DevOps"
   | "Desktop";
 
-export type ProjectStatus = "En desarrollo" | "Activo" | "Completado" | "Prototipo";
+export type ProjectStatus =
+  | "En desarrollo"
+  | "En pausa"
+  | "Beta abierta"
+  | "Activo"
+  | "Completado"
+  | "Prototipo";
 
 // Etiquetas para el filtro de "otros proyectos"
 export type ProjectTag =
@@ -36,6 +42,8 @@ export type Project = {
   tags: ProjectTag[];
   featured: boolean;
   repoOrLink?: string; // URL del repo/demo, o undefined si no es público
+  accessLabel?: string;
+  accessHref?: string;
 };
 
 export const identity = {
@@ -210,7 +218,7 @@ export const projects: Project[] = [
     result: "HG-VMM: un hipervisor escrito desde cero sobre Windows Hypervisor Platform que arranca Ubuntu con GNOME acelerado por GPU y 284 tests verdes.",
     stats: ["284 tests C#", "~31.000 LOC C#", "13 hitos N1–N13", "4 vCPUs / 16 GiB"],
     role: "Arquitecto y desarrollador único: hipervisor, Hub, agentes y apps",
-    status: "En desarrollo",
+    status: "En pausa",
     description:
       "Ecosistema completo de virtualización: app de escritorio (Avalonia/C#), un Hub central que orquesta una flota de equipos vía agentes, y apps móviles de control remoto. Su pieza estrella es HG-VMM, un hipervisor propio escrito desde cero sobre la Windows Hypervisor Platform.",
     stack: ["C# / .NET 8", "WHPX", "Avalonia", "Rust", "Python", "Docker", "Kotlin / Compose"],
@@ -280,14 +288,14 @@ export const projects: Project[] = [
   {
     slug: "nodepilot",
     name: "NodePilot",
-    oneLiner: "Control total de un PC Windows desde Android por LAN, sin nube ni cuenta.",
+    oneLiner: "Control total de un PC Windows desde Android por LAN. Beta abierta con acceso por contacto.",
     problem: "Manejar el PC (audio, energía, ratón/teclado, pantalla, archivos) desde el móvil sin exponerlo a internet.",
     result: "Stack de 3 componentes con ~45 rutas REST/WSS, telemetría CPU/GPU cada 2 s y desbloqueo del PC desde el móvil vía Credential Provider nativo.",
     stats: ["~45 rutas REST/WSS", "25 tests", "3 componentes nativos", "telemetría cada 2 s"],
     role: "Autor único: protocolo, agente WinUI 3, app Android y Credential Provider C++",
-    status: "En desarrollo",
+    status: "Beta abierta",
     description:
-      "Sistema cliente-servidor LAN-only para controlar un PC Windows desde Android: telemetría de CPU/RAM/GPU/red, control de volumen por aplicación, ratón/teclado, archivos y acciones de sistema. Cliente Android en Kotlin y agente Windows en WinUI 3 / .NET 8.",
+      "Sistema cliente-servidor LAN-only para controlar un PC Windows desde Android: telemetría de CPU/RAM/GPU/red, control de volumen por aplicación, ratón/teclado, archivos y acciones de sistema. Cliente Android en Kotlin y agente Windows en WinUI 3 / .NET 8. Beta abierta; contacta conmigo para acceder.",
     stack: ["Kotlin / Compose", "WinUI 3 / .NET 8", "C++ (Credential Provider)", "TLS + AES-256-GCM", "mDNS", "WebSockets"],
     mainTech: [".NET 8 / WinUI 3", "Kotlin / Compose", "C++ (Credential Provider)", "TLS + AES-256-GCM", "mDNS"],
     highlights: [
@@ -301,6 +309,8 @@ export const projects: Project[] = [
     tags: ["Sistemas", "Redes", "Android"],
     featured: true,
     repoOrLink: undefined,
+    accessLabel: "Contacta para acceder",
+    accessHref: `mailto:${contact.email}?subject=Acceso%20a%20la%20beta%20de%20NodePilot`,
   },
   {
     slug: "gery-assistant",
